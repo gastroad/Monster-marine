@@ -1,0 +1,7 @@
+# dependencies
+/front/node_modules
+# production
+/front/dist
+# misc
+.DS_Store
+npm-debug.log*

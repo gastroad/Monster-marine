@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+
 module.exports = {
   entry: "./src/index.tsx",
   resolve: {
@@ -9,6 +11,11 @@ module.exports = {
       "@containers": path.resolve("./src/containers")
     },
     extensions: [".js", ".jsx", ".ts", ".tsx"]
+  },
+  output: {
+    path: path.resolve("./dist"),
+    filename: "bundle.min.js",
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -22,21 +29,26 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
       }
     ]
   },
   plugins: [
+    new CaseSensitivePathsPlugin(),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: "./src/index.html"
     })
-  ]
+  ],
+  devServer: {
+    host: "0.0.0.0",
+    port: 8080,
+    disableHostCheck: true,
+    historyApiFallback: true,
+    // proxy: {
+    //   "/api": {
+    //     target: "", /////////////////////////
+    //     changeOrigin: true,
+    //     secure: false
+    //   }
+    // }
+  }
 };

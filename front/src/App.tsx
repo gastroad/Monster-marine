@@ -1,16 +1,29 @@
-import React, { Component } from "react";
+import React from "react"
 
-import Main from "./pages/Main";
-import "./index.scss";
+import Main from "./pages/Main"
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch
+} from "react-router-dom"
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        asd
-        <Main />
-      </div>
-    );
-  }
+import "./index.scss"
+
+const App = () => {
+  return (
+    <Router>
+      <>
+        header
+        <>
+          <div id="root-modal" />
+          <Switch>
+            <Route path="/main" component={Main} />
+            <Redirect to="/" />;
+          </Switch>
+        </>
+      </>
+    </Router>
+  )
 }
-export default App;
+export default App

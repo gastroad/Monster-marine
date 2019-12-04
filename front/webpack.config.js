@@ -1,6 +1,6 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+const path = require("path")
+const HtmlWebPackPlugin = require("html-webpack-plugin")
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -29,6 +29,11 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.(bmp|gif|jpe?g|png)$/,
+        loader: "file-loader",
+        options: { name: "images/[name].[hash:6].[ext]" }
       }
     ]
   },
@@ -42,7 +47,7 @@ module.exports = {
     host: "0.0.0.0",
     port: 8080,
     disableHostCheck: true,
-    historyApiFallback: true,
+    historyApiFallback: true
     // proxy: {
     //   "/api": {
     //     target: "", /////////////////////////
@@ -51,4 +56,4 @@ module.exports = {
     //   }
     // }
   }
-};
+}

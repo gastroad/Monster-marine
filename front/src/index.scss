@@ -1,4 +1,152 @@
-div{
-  background-color: red;
-  color: gray;
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+span,
+form,
+fieldset,
+input,
+select,
+label,
+textarea,
+table,
+caption,
+thead,
+tfoot,
+tbody,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  font: 14px/1.5 "맑은고딕", "Malgun Gothic", "나눔고딕", "nanumgothic", 굴림,
+    Gulim, 돋움, Dotum, Sans-serif;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+b,
+span,
+strong,
+input,
+a,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+hgroup,
+details,
+summary,
+figure,
+figcaption {
+  display: block;
+}
+cite {
+  display: inline;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0px;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+img {
+  border: 0;
+  max-width: 100%;
+}
+label,
+input,
+textarea,
+select {
+  vertical-align: middle;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+fieldset {
+  border: none;
+}
+hr,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+nav {
+  .nav-list-item {
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0px 10px;
+  }
+}
+header {
+  margin-bottom: 40px;
+  .header-input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    input {
+      position: relative;
+      box-sizing: border-box;
+      width: 230px;
+      height: 40px;
+      padding: 0 13px;
+      border: 1px solid #d3d2d2;
+      outline: None;
+      vertical-align: middle;
+      font-size: 14px;
+      color: #000;
+    }
+    .search-icon {
+      background-color: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 40px;
+      img {
+        width: 22px;
+      }
+    }
+  }
 }

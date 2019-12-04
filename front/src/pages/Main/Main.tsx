@@ -1,6 +1,10 @@
-import React from "react";
+import React from "react"
 
 const Main = () => {
-  return <div>mainPageq</div>;
-};
-export default Main;
+  return (
+    <section>
+      <article>내용</article>
+    </section>
+  )
+}
+export default Main

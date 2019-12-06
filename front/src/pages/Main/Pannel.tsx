@@ -14,11 +14,11 @@ const Pannel = () => {
       <div className="pannel-right">
         <h2 className="notice">공지사항</h2>
         <ul className="notice-list">
-          <li>asd</li>
-          <li>asd</li>
-          <li>asd</li>
-          <li>asd</li>
-          <li>asd</li>
+          <li>2019.01.12 공지사항</li>
+          <li>2019.01.12 공지사항</li>
+          <li>2019.01.12 공지사항</li>
+          <li>2019.01.12 공지사항</li>
+          <li>2019.01.12 공지사항</li>
         </ul>
       </div>
     </div>

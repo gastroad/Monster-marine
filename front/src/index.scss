@@ -1,3 +1,10 @@
+// #000 검은색 글자색
+// #fff 흰색
+// #0d68bd 파란색 포인트
+// #171b1f 검은색 포인트
+// #d3d2d2 회색 보더
+// #f9f9f9 회색 비쥐F
+
 html,
 body,
 div,
@@ -110,8 +117,8 @@ button {
   display: inline-block;
 }
 nav {
-  border: 1px solid red;
-  background-color: rgb(240, 10, 25);
+  border: 1px solid #171b1f;
+  background-color: #171b1f;
   display: flex;
   justify-content: space-between;
   height: 40px;
@@ -165,7 +172,7 @@ header {
 #main {
   .Banner {
     height: 480px;
-    background-color: gray;
+    background-color: #0d68bd;
     margin-bottom: 20px;
   }
   .pannel {
@@ -191,6 +198,11 @@ header {
       .notice-list {
         li {
           font-size: 20px;
+          padding: 0px 10px;
+          height: 40px;
+          background: red;
+          display: flex;
+          align-items: center;
         }
       }
     }

@@ -6,7 +6,8 @@ const Header = () => {
       <header
         style={{
           display: "flex",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          marginTop: "24px"
         }}
       >
         <h1>
@@ -21,10 +22,7 @@ const Header = () => {
       </header>
       <nav
         style={{
-          backgroundColor: "rgb(240, 10 ,25)",
-          display: "flex",
-          justifyContent: "space-between",
-          height: "40px"
+          marginBottom: "20px"
         }}
       >
         <div style={{ display: "flex" }}>

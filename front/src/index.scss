@@ -110,13 +110,23 @@ button {
   display: inline-block;
 }
 nav {
+  border: 1px solid red;
+  background-color: rgb(240, 10, 25);
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
   .nav-list-item {
-    width: 100;
+    min-width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     padding: 0px 10px;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background-color: darken(red, 15%);
+    }
   }
 }
 header {
@@ -128,7 +138,7 @@ header {
     input {
       position: relative;
       box-sizing: border-box;
-      width: 230px;
+      width: 180px;
       height: 40px;
       padding: 0 13px;
       border: 1px solid #d3d2d2;
@@ -136,6 +146,7 @@ header {
       vertical-align: middle;
       font-size: 14px;
       color: #000;
+      border-radius: 10px 0px 0px 10px;
     }
     .search-icon {
       background-color: gray;
@@ -144,8 +155,43 @@ header {
       align-items: center;
       height: 40px;
       width: 40px;
+      border-radius: 0px 10px 10px 0px;
       img {
         width: 22px;
+      }
+    }
+  }
+}
+#main {
+  .Banner {
+    height: 480px;
+    background-color: gray;
+    margin-bottom: 20px;
+  }
+  .pannel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .pannel-left {
+      display: inline-block;
+      background-color: blue;
+      width: 860px;
+      height: 400px;
+    }
+    .pannel-right {
+      border-radius: 4px;
+      display: inline-block;
+      background-color: green;
+      width: 320px;
+      height: 400px;
+      text-align: center;
+      .notice {
+        font-size: 26px;
+      }
+      .notice-list {
+        li {
+          font-size: 20px;
+        }
       }
     }
   }

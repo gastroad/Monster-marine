@@ -28,6 +28,12 @@ const App = () => {
             <div id="root-modal" />
             <Switch>
               <Route path="/main" component={Main} />
+              <Route
+                path="/test"
+                component={() => {
+                  return <div>test</div>
+                }}
+              />
               <Redirect to="/main" />
             </Switch>
           </>

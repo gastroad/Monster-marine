@@ -1,9 +1,14 @@
 import React from "react"
+import Pannel from "./Pannel"
+import Banner from "./Banner"
 
 const Main = () => {
   return (
     <section>
-      <article>내용</article>
+      <article id="main">
+        <Banner />
+        <Pannel />
+      </article>
     </section>
   )
 }

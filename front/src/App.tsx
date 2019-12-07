@@ -16,21 +16,30 @@ import "./index.scss"
 const App = () => {
   return (
     <Router>
-      <div
-        style={{
-          margin: "24px 60px 60px",
-        }}
-      >
-        <Header />
-        <>
-          <div id="root-modal" />
-          <Switch>
-            <Route path="/main" component={Main} />
-            <Redirect to="/main" />;
-          </Switch>
-        </>
+      <>
+        <div
+          style={{
+            width: "1200px",
+            margin: "0 auto"
+          }}
+        >
+          <Header />
+          <>
+            <div id="root-modal" />
+            <Switch>
+              <Route path="/main" component={Main} />
+              <Route
+                path="/test"
+                component={() => {
+                  return <div>test</div>
+                }}
+              />
+              <Redirect to="/main" />
+            </Switch>
+          </>
+        </div>
         <Footer />
-      </div>
+      </>
     </Router>
   )
 }

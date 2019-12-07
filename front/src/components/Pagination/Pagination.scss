@@ -1,0 +1,37 @@
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+.pagination a {
+  display: inline-block;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.pagination a.on {
+  color: #016ba7;
+  font-weight: 600;
+}
+.pagination {
+  margin-top: 22.5px;
+  text-align: center;
+  font-size: 0;
+}
+.pagination > a {
+  display: inline-block;
+  margin: 0 5px;
+}
+.pagination span {
+  padding: 0 10px;
+}
+.pagination span a {
+  display: inline-block;
+  height: 19px;
+  line-height: 19px;
+  vertical-align: top;
+  font-size: 15px;
+  color: #999;
+}
+.pagination span a.on {
+  color: #000;
+  font-weight: 600;
+}

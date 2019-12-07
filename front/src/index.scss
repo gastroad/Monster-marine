@@ -1,3 +1,10 @@
+// #000 검은색 글자색
+// #fff 흰색
+// #0d68bd 파란색 포인트
+// #171b1f 검은색 포인트
+// #d3d2d2 회색 보더
+// #f9f9f9 회색 비쥐F
+
 html,
 body,
 div,
@@ -110,17 +117,28 @@ button {
   display: inline-block;
 }
 nav {
+  border: 1px solid #171b1f;
+  border-radius: 3px;
+  background-color: #171b1f;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
   .nav-list-item {
-    width: 100;
+    min-width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     padding: 0px 10px;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background-color: darken(red, 15%);
+    }
   }
 }
 header {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   .header-input-wrapper {
     display: flex;
     justify-content: center;
@@ -128,25 +146,99 @@ header {
     input {
       position: relative;
       box-sizing: border-box;
-      width: 230px;
-      height: 40px;
+      width: 180px;
+      height: 35px;
       padding: 0 13px;
       border: 1px solid #d3d2d2;
       outline: None;
       vertical-align: middle;
       font-size: 14px;
       color: #000;
+      border-radius: 5px 0px 0px 5px;
     }
     .search-icon {
-      background-color: gray;
+      background-color: #d3d2d2;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 40px;
-      width: 40px;
+      height: 35px;
+      width: 35px;
+      border-radius: 0px 5px 5px 0px;
       img {
         width: 22px;
       }
     }
+  }
+}
+.footer {
+  text-align: center;
+  background-color: #f9f9f9;
+  height: 200px;
+  border-top: 1px solid #d3d2d2;
+  margin-top: 20px;
+}
+#main {
+  .Banner {
+    height: 480px;
+    background-color: #0d68bd;
+    margin-bottom: 20px;
+  }
+  .pannel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .pannel-left {
+      display: inline-block;
+      border: 1px solid #d3d2d2;
+      background-color: #f9f9f9;
+      width: 860px;
+      h3 {
+        margin: 10px 0px 10px 15px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 26px;
+        text-align: center;
+      }
+      .pannel-product-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+    }
+    .pannel-right {
+      border-radius: 4px;
+      display: inline-block;
+      border: 1px solid #d3d2d2;
+      background-color: #f9f9f9;
+      width: 320px;
+      height: 350px;
+      text-align: center;
+      .notice {
+        font-size: 26px;
+        margin: 10px 0px;
+      }
+      .notice-list {
+        li {
+          cursor: pointer;
+          font-size: 16px;
+          padding: 0px 20px;
+          height: 45px;
+          line-height: 45px;
+          border-bottom: 0.5px solid#d3d2d2;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.prodcut-item {
+  display: inline-block;
+  border: 1px solid #d3d2d2;
+  img {
+    width: 200px;
+    height: 200px;
   }
 }

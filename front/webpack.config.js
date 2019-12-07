@@ -14,8 +14,8 @@ module.exports = {
   },
   output: {
     path: path.resolve("./dist"),
-    filename: "bundle.min.js",
-    publicPath: "/"
+    publicPath: "/",
+    filename: "bundle.min.js"
   },
   module: {
     rules: [
@@ -34,6 +34,11 @@ module.exports = {
         test: /\.(bmp|gif|jpe?g|png)$/,
         loader: "file-loader",
         options: { name: "images/[name].[hash:6].[ext]" }
+      },
+      {
+        test: /\.(eot|ttf|otf|woff2?)$/,
+        loader: "file-loader",
+        options: { name: "fonts/font.[hash:6].[ext]" }
       }
     ]
   },

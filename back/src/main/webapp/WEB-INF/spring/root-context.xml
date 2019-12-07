@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<import resource="mybatis/mybatis-context.xml"/>
+	
+	<context:component-scan base-package="com.monstermarine" />
+	
+	<context:property-placeholder location="classpath:properties/app.properties" />
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="requestFactory">
+			<bean class="org.springframework.http.client.SimpleClientHttpRequestFactory">
+				<property name="connectTimeout" value="5000" />
+				<property name="readTimeout" value="5000" />
+			</bean>
+		</property> 
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	
+	<!-- FILE -->
+	<!--  bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="5368709120" />
+    </bean -->
+    
+    <!-- JSON -->
+    <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="contentType" value="application/json;charset=UTF-8" />
+	</bean>
+	
+	<!-- Mail -->
+	<!-- bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl" -->
+
+		<!-- property name="host" value="221.143.48.180" / -->
+		<!-- property name="port" value="25" / -->
+
+		<!-- 개발영역  -->
+		<!-- property name="defaultEncoding" value="UTF-8" / -->
+
+	<!-- /bean -->
+		
+</beans>

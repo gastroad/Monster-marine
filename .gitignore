@@ -2,6 +2,13 @@
 /front/node_modules
 # production
 /front/dist
+/front/package-lock.json
 # misc
 .DS_Store
 npm-debug.log*
+# back
+/back/src/main/resources/properties
+/back/target
+/back/.idea
+/back/out
+/back/spring.iml

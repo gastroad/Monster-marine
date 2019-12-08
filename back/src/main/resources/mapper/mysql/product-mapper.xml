@@ -1,82 +1,207 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="product">
 
-	<insert id="insertBoard" parameterType="resultmap">
+	<select id="getProduct" resultType="resultmap" parameterType="map">
 		/*
-			SQL ID : com.monstermarine.api.front.board.insertBoard
-			설명 : 게시물 등록
+			SQL ID : com.monstermarine.api.product.getProduct
+			설명 : 상품 상세 조회
 		*/
-		INSERT INTO boat.board_test (
-			TITLE, 
-			CONTENTS, 
-			REG_NM, 
-			REG_DTM, 
-			LST_UPD_NM,
-			LST_UPD_DTM
+		SELECT
+			PRODUCT_SEQ,
+			TITLE,
+			CONTENTS,
+			PRICE,
+			ATTECHMENT1,
+			ATTECHMENT2,
+			ATTECHMENT3,
+			ATTECHMENT4,
+			ATTECHMENT5,
+			ATTECHMENT6,
+			ATTECHMENT7,
+			ATTECHMENT8,
+			ATTECHMENT9,
+			ATTECHMENT10,
+			IS_DELETE,
+			USER_ID,
+			CREATEA_DATE,
+			UPDATE_DATE
+		FROM
+			MONSTER_MARINE.PRODUCT
+		WHERE
+			PRODUCT_SEQ = #{productSeq}
+	</select>
+
+	<select id="getProductList" resultType="resultmap" parameterType="map">
+		/*
+			SQL ID : com.monstermarine.api.product.getProductList
+			설명 : 상품 목록 조회
+		*/
+		SELECT
+			PRODUCT_SEQ,
+			TITLE,
+			CONTENTS,
+			PRICE,
+			ATTECHMENT1,
+			ATTECHMENT2,
+			ATTECHMENT3,
+			ATTECHMENT4,
+			ATTECHMENT5,
+			ATTECHMENT6,
+			ATTECHMENT7,
+			ATTECHMENT8,
+			ATTECHMENT9,
+			ATTECHMENT10,
+			IS_DELETE,
+			USER_ID,
+			CREATEA_DATE,
+			UPDATE_DATE
+		FROM
+			MONSTER_MARINE.PRODUCT
+		WHERE
+			IS_DELETE = false
+	</select>
+
+	<insert id="insertProduct" parameterType="resultmap">
+		/*
+			SQL ID : com.monstermarine.api.product.insertProduct
+			설명 : 상품 등록
+		*/
+		INSERT INTO MONSTER_MARINE.PRODUCT (
+			TITLE,
+			CONTENTS,
+			PRICE,
+			<if test="attechment1 != null and attechment1 != ''" >
+			ATTECHMENT1,
+			</if>
+			<if test="attechment2 != null and attechment2 != ''" >
+			ATTECHMENT2,
+			</if>
+			<if test="attechment3 != null and attechment3 != ''" >
+			ATTECHMENT3,
+			</if>
+			<if test="attechment4 != null and attechment4 != ''" >
+			ATTECHMENT4,
+			</if>
+			<if test="attechment5 != null and attechment5 != ''" >
+			ATTECHMENT5,
+			</if>
+			<if test="attechment6 != null and attechment6 != ''" >
+			ATTECHMENT6,
+			</if>
+			<if test="attechment7 != null and attechment7 != ''" >
+			ATTECHMENT7,
+			</if>
+			<if test="attechment8 != null and attechment8 != ''" >
+			ATTECHMENT8,
+			</if>
+			<if test="attechment9 != null and attechment9 != ''" >
+			ATTECHMENT9,
+			</if>
+			<if test="attechment10 != null and attechment10 != ''" >
+			ATTECHMENT10,
+			</if>
+			USER_ID,
+			CREATEA_DATE,
+			UPDATE_DATE
 		) VALUES (
 			#{title},
 			#{contents},
-			#{regNm},
+			#{price},
+			<if test="attechment1 != null and attechment1 != ''" >
+			#{attechment1},
+			</if>
+			<if test="attechment2 != null and attechment2 != ''" >
+			#{attechment2},
+			</if>
+			<if test="attechment3 != null and attechment3 != ''" >
+			#{attechment3},
+			</if>
+			<if test="attechment4 != null and attechment4 != ''" >
+			#{attechment4},
+			</if>
+			<if test="attechment5 != null and attechment5 != ''" >
+			#{attechment5},
+			</if>
+			<if test="attechment6 != null and attechment6 != ''" >
+			#{attechment6},
+			</if>
+			<if test="attechment7 != null and attechment7 != ''" >
+			#{attechment7},
+			</if>
+			<if test="attechment8 != null and attechment8 != ''" >
+			#{attechment8},
+			</if>
+			<if test="attechment9 != null and attechment9 != ''" >
+			#{attechment9},
+			</if>
+			<if test="attechment10 != null and attechment10 != ''" >
+			#{attechment10},
+			</if>
+			#{userId},
 			now(),
-			#{lstUpdNm},
 			now()
 		)
 	</insert>
 
-	<select id="getBoard" resultType="resultmap" parameterType="map">
+	<update id="updateProduct" parameterType="resultmap">
 		/*
-			SQL ID : com.monstermarine.api.front.board.getBoard
-			설명 : 게시물 조회
+			SQL ID : com.monstermarine.api.product.updateProduct
+			설명 : 상품 수정
 		*/
-		SELECT
-			SEQ,
-			TITLE,
-			CONTENTS,
-			REG_NM,
-			REG_DTM,
-			LST_UPD_NM,
-			LST_UPD_DTM,
-			DEL_YN,
-			CNT
-		FROM
-			boat.board_test
-		WHERE
-			seq = #{seq}
-	</select>
 
-	<select id="getBoardList" resultType="resultmap" parameterType="map">
-		/*
-			SQL ID : com.monstermarine.api.front.board.getBoardList
-			설명 : 게시물 목록 조회
-		*/
-		SELECT
-			SEQ,
-			TITLE,
-			CONTENTS,
-			REG_NM,
-			REG_DTM,
-			LST_UPD_NM,
-			LST_UPD_DTM,
-			DEL_YN,
-			CNT
-		FROM
-			boat.board_test
-	</select>
-	
-	<update id="deleteBoard" parameterType="map">
-		/*
-			SQL ID : com.monstermarine.api.front.board.deleteBoard
-			
-			설명 : 게시물 삭제
-		*/
-		UPDATE boat.board_test
-		SET
-			DEL_YN = 'Y'
+		UPDATE MONSTER_MARINE.PRODUCT SET
+			TITLE = #{title},
+			CONTENTS = #{contents},
+			PRICE = #{price},
+			<if test="attechment1 != null and attechment1 != ''" >
+			ATTECHMENT1 =  #{attechment1},
+			</if>
+			<if test="attechment2 != null and attechment2 != ''" >
+			ATTECHMENT2 =  #{attechment2},
+			</if>
+			<if test="attechment3 != null and attechment3 != ''" >
+			ATTECHMENT3 =  #{attechment3},
+			</if>
+			<if test="attechment4 != null and attechment4 != ''" >
+			ATTECHMENT4 =  #{attechment4},
+			</if>
+			<if test="attechment5 != null and attechment5 != ''" >
+			ATTECHMENT5 =  #{attechment5},
+			</if>
+			<if test="attechment6 != null and attechment6 != ''" >
+			ATTECHMENT6 =  #{attechment6},
+			</if>
+			<if test="attechment7 != null and attechment7 != ''" >
+			ATTECHMENT7 =  #{attechment7},
+			</if>
+			<if test="attechment8 != null and attechment8 != ''" >
+			ATTECHMENT8 =  #{attechment8},
+			</if>
+			<if test="attechment9 != null and attechment9 != ''" >
+			ATTECHMENT9 =  #{attechment9},
+			</if>
+			<if test="attechment10 != null and attechment10 != ''" >
+			ATTECHMENT10 =  #{attechment10},
+			</if>
+			USER_ID = #{userId},
+			UPDATE_DATE = now()
 		WHERE
-			SEQ = #{seq}			
-	</update>	
-	
+			PRODUCT_SEQ = #{productSeq}
+	</update>
+
+	<update id="deleteProduct" parameterType="map">
+		/*
+			SQL ID : com.monstermarine.api.product.deleteProduct
+			설명 : 공지사항 삭제
+		*/
+		UPDATE MONSTER_MARINE.PRODUCT
+		SET
+			IS_DELETE = true
+		WHERE
+			PRODUCT_SEQ = #{productSeq}
+	</update>
+
 </mapper>

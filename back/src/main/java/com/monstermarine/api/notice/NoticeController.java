@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 /**
- * * @업무명			: 공지사항 관리
+ * @업무명			: 공지사항 관리
  * @프로그램 설명 	: 공지사항을 관리한다.
  * @FileName		: NoticeController.java
  * @Project			: MONSTER MARINE

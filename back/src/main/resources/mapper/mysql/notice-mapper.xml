@@ -7,7 +7,7 @@
 	<select id="getNotice" resultType="resultmap" parameterType="map">
 		/*
 			SQL ID : com.monstermarine.api.notice.getNotice
-			설명 : 공지사항 조회
+			설명 : 공지사항 상세 조회
 		*/
 		SELECT
 			NOTICE_SEQ,
@@ -29,7 +29,7 @@
 	<select id="getNoticeList" resultType="resultmap" parameterType="map">
 		/*
 			SQL ID : com.monstermarine.api.notice.getNoticeList
-			설명 : 공지사항 목록
+			설명 : 공지사항 목록 조회
 		*/
 		SELECT
 			NOTICE_SEQ,
@@ -101,7 +101,7 @@
 		*/
 		UPDATE MONSTER_MARINE.NOTICE
 		SET
-			IS_DELETE = '1'
+			IS_DELETE = true
 		WHERE
 			NOTICE_SEQ = #{noticeSeq}			
 	</update>	

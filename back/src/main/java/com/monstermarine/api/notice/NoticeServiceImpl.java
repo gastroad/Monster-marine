@@ -53,6 +53,7 @@ public class NoticeServiceImpl extends CommonService implements NoticeService {
 		}
 		
 		return result;
+
 	}
 
 	/**
@@ -71,6 +72,7 @@ public class NoticeServiceImpl extends CommonService implements NoticeService {
 		}
 		
 		return result;
+
 	}
 
 	/**

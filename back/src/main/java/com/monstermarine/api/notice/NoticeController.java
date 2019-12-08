@@ -34,7 +34,7 @@ public class NoticeController {
 	MappingJackson2JsonView jsonView;
 	
 	/**
-	 * 공지사항 조회
+	 * 공지사항 상세 조회
 	 */
 	@RequestMapping(value = "/notice/{noticeSeq}", method = RequestMethod.GET)
 	public ModelAndView getNotice(@PathVariable String noticeSeq, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -48,7 +48,7 @@ public class NoticeController {
 	}
 	
 	/**
-	 * 공지사항 목록
+	 * 공지사항 목록 조회
 	 */
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
 	public ModelAndView getNoticeList(@RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -66,11 +66,7 @@ public class NoticeController {
 	@RequestMapping(value = "/notice", method = RequestMethod.POST)
 	public ModelAndView insertNotice(@RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		System.out.println("========================Controller");
-		System.out.println(param.get("title"));
-		System.out.println(param.get("contents"));
-
-		ModelAndView mav = new ModelAndView(jsonView); 
+		ModelAndView mav = new ModelAndView(jsonView);
 		mav.addObject("RESULT", noticeService.insertNotice(param));
 		
 		return mav;

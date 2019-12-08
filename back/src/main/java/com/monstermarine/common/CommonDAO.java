@@ -1,4 +1,4 @@
-package com.monstermarine.api.common;
+package com.monstermarine.common;
 
 import java.util.List;
 import java.util.Map;

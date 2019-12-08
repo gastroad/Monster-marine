@@ -25,7 +25,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="resultmap" type="com.monstermarine.api.common.ResultMap" />
+		<typeAlias alias="resultmap" type="com.monstermarine.common.ResultMap" />
 	</typeAliases>
 	
 </configuration>

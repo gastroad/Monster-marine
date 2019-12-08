@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.monstermarine.api.common.CommonService;
+import com.monstermarine.common.CommonService;
 
 @Service
 public class ProductServiceImpl extends CommonService implements ProductService {

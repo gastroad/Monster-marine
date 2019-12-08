@@ -62,7 +62,7 @@
 			USER_ID,
 			START_DATE,
 			END_DATE,
-			IS_VIEW,
+			IS_VIEW
 		) VALUES (
 			#{title},
 			#{contents},

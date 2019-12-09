@@ -10,6 +10,7 @@ import {
 
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import SubMenu from "./components/SubMenu"
 
 import "./index.scss"
 
@@ -17,26 +18,24 @@ const App = () => {
   return (
     <Router>
       <>
-        <div
-          style={{
-            width: "1200px",
-            margin: "0 auto"
-          }}
-        >
+        <div id="root-modal" />
+        <div>
           <Header />
-          <>
-            <div id="root-modal" />
-            <Switch>
-              <Route path="/main" component={Main} />
-              <Route
-                path="/test"
-                component={() => {
-                  return <div>test</div>
-                }}
-              />
-              <Redirect to="/main" />
-            </Switch>
-          </>
+          <div style={{ width: "1200px", margin: "0px auto" }}>
+            <SubMenu />
+            <>
+              <Switch>
+                <Route path="/main" component={Main} />
+                <Route
+                  path="/test"
+                  component={() => {
+                    return <div>test</div>
+                  }}
+                />
+                <Redirect to="/main" />
+              </Switch>
+            </>
+          </div>
         </div>
         <Footer />
       </>

@@ -21,7 +21,14 @@ const App = () => {
         <div id="root-modal" />
         <div>
           <Header />
-          <div style={{ width: "1200px", margin: "0px auto" }}>
+          <div
+            style={{
+              width: "1200px",
+              margin: "0px auto",
+              display: "flex",
+              justifyContent: " space-between"
+            }}
+          >
             <SubMenu />
             <>
               <Switch>

@@ -36,11 +36,11 @@ public class NoticeController {
 	/**
 	 * 공지사항 상세 조회
 	 */
-	@RequestMapping(value = "/notice/{noticeSeq}", method = RequestMethod.GET)
-	public ModelAndView getNotice(@PathVariable String noticeSeq, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/notice/{noticeId}", method = RequestMethod.GET)
+	public ModelAndView getNotice(@PathVariable String noticeId, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		ModelAndView mav = new ModelAndView(jsonView); 
-		param.put("noticeSeq", noticeSeq);
+		param.put("noticeId", noticeId);
 		mav.addObject("RESULT", noticeService.getNotice(param));
 		
 		return mav;
@@ -52,12 +52,12 @@ public class NoticeController {
 	 */
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
 	public ModelAndView getNoticeList(@RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		ModelAndView mav = new ModelAndView(jsonView); 
+
+		ModelAndView mav = new ModelAndView(jsonView);
 		mav.addObject("RESULT", noticeService.getNoticeList(param));
-		
+
 		return mav;
-		
+
 	}
 	
 	/**
@@ -76,11 +76,11 @@ public class NoticeController {
 	/**
 	 * 공지사항 수정
 	 */
-	@RequestMapping(value = "/notice/{noticeSeq}", method = RequestMethod.PUT)
-	public ModelAndView updateNotice(@PathVariable String noticeSeq, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/notice/{noticeId}", method = RequestMethod.PUT)
+	public ModelAndView updateNotice(@PathVariable String noticeId, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		ModelAndView mav = new ModelAndView(jsonView); 
-		param.put("noticeSeq", noticeSeq);
+		param.put("noticeId", noticeId);
 		mav.addObject("RESULT", noticeService.updateNotice(param));
 		
 		return mav;
@@ -90,11 +90,11 @@ public class NoticeController {
 	/**
 	 * 공지사항 삭제
 	 */
-	@RequestMapping(value = "/notice/{noticeSeq}/delete", method = RequestMethod.PUT)
-	public ModelAndView deleteNotice(@PathVariable String noticeSeq, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/notice/{noticeId}/delete", method = RequestMethod.PUT)
+	public ModelAndView deleteNotice(@PathVariable String noticeId, @RequestParam  Map<String, Object> param, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		ModelAndView mav = new ModelAndView(jsonView); 
-		param.put("noticeSeq", noticeSeq);
+		param.put("noticeId", noticeId);
 		mav.addObject("RESULT", noticeService.deleteNotice(param));
 		
 		return mav;

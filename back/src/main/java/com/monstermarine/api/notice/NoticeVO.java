@@ -13,7 +13,7 @@ public class NoticeVO {
     private Date startDate;
     private Date endDate;
     private boolean isView;
-    private boolean isdelete;
+    private boolean isDelete;
 
     public int getNoticeId() {
         return noticeId;
@@ -87,12 +87,12 @@ public class NoticeVO {
         isView = view;
     }
 
-    public boolean isIsdelete() {
-        return isdelete;
+    public boolean isIsDelete() {
+        return isDelete;
     }
 
-    public void setIsdelete(boolean isdelete) {
-        this.isdelete = isdelete;
+    public void setIsDelete(boolean isDelete) {
+        this.isDelete = isDelete;
     }
 
 }

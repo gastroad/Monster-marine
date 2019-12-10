@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="notice">
+<mapper namespace="com.monstermarine.api.notice.NoticeMapper">
 
-	<select id="getNotice" resultType="resultmap" parameterType="map">
+	<select id="getNotice" resultType="noticeVO" parameterType="noticeVO">
 		/*
 			SQL ID : com.monstermarine.api.notice.getNotice
 			설명 : 공지사항 상세 조회
@@ -50,7 +50,7 @@
 			IS_DELETE = false
 	</select>
 
-	<insert id="insertNotice" parameterType="resultmap">
+	<insert id="insertNotice" parameterType="com.monstermarine.api.notice.NoticeVO">
 	<![CDATA[
 		/*
 			SQL ID : com.monstermarine.api.notice.insertNotice

@@ -13,17 +13,19 @@
 			NOTICE_ID,
 			TITLE,
 			CONTENTS,
-			CREATE_DATE,
-			UPDATE_DATE,
+			DATE_FORMAT(CREATE_DATE, '%Y-%m-%dT%TZ') AS CREATE_DATE,
+			DATE_FORMAT(UPDATE_DATE, '%Y-%m-%dT%TZ') AS UPDATE_DATE,
 			USER_ID,
-			START_DATE,
-			END_DATE,
+			DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE,
+			DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE,
 			IS_VIEW,
 			IS_DELETE
 		FROM
 			MONSTER_MARINE.NOTICE
-		WHERE
-			NOTICE_ID = #{noticeId}
+		<where>
+			<if test="noticeId != null and noticeId != ''">AND NOTICE_ID = #{noticeId}</if>
+			<if test="isDelete != null and isDelete != ''">AND IS_DELETE = false</if>
+		</where>
 	</select>
 	
 	<select id="getNoticeList" resultType="resultmap" parameterType="map">
@@ -35,11 +37,11 @@
 			NOTICE_ID,
 			TITLE,
 			CONTENTS,
-			CREATE_DATE,
-			UPDATE_DATE,
+			DATE_FORMAT(CREATE_DATE, '%Y-%m-%dT%TZ') AS CREATE_DATE,
+			DATE_FORMAT(UPDATE_DATE, '%Y-%m-%dT%TZ') AS UPDATE_DATE,
 			USER_ID,
-			START_DATE,
-			END_DATE,
+			DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE,
+			DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE,
 			IS_VIEW,
 			IS_DELETE
 		FROM

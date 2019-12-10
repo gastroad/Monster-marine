@@ -70,7 +70,7 @@ public class NoticeServiceImpl extends CommonService implements NoticeService {
 		} else {
 			result.put("SUCCESS", false);
 		}
-		
+
 		return result;
 
 	}
@@ -89,7 +89,7 @@ public class NoticeServiceImpl extends CommonService implements NoticeService {
 		} else {
 			result.put("SUCCESS", false);
 		}
-		
+
 		return result;
 		
 	}

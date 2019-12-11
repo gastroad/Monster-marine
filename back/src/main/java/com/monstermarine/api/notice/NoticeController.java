@@ -42,6 +42,7 @@ public class NoticeController {
 	public NoticeVO getNotice(NoticeVO noticeVO, @PathVariable int noticeId) throws Exception {
 
 		noticeVO.setNoticeId(noticeId);
+		System.out.println(noticeMapper.getNotice(noticeVO).getNoticeId());
 		return noticeMapper.getNotice(noticeVO);
 
 	}

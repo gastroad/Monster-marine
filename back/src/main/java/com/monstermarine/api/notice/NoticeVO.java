@@ -9,7 +9,7 @@ public class NoticeVO {
     private String content;
     private Date createDate;
     private Date updateDate;
-    private String userIdl;
+    private String userId;
     private Date startDate;
     private Date endDate;
     private boolean isView;
@@ -55,12 +55,12 @@ public class NoticeVO {
         this.updateDate = updateDate;
     }
 
-    public String getUserIdl() {
-        return userIdl;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserIdl(String userIdl) {
-        this.userIdl = userIdl;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Date getStartDate() {

@@ -1,6 +1,7 @@
 import React from "react"
 import ProductItem from "@components/ProductItem"
 
+
 const ProductList = () => {
   return (
     <>
@@ -21,7 +22,16 @@ const ProductList = () => {
             }}
           >
             <strong style={{ color: "#ff0000" }}>NEW</strong> ARRIVAL{" "}
-            <span>따끈따끈 신상품</span>
+            <span
+              style={{
+                fontWeight: "normal",
+                color: "#999999",
+                fontSize: "12px",
+                letterSpacing: "-1px"
+              }}
+            >
+              따끈따끈 신상품
+            </span>
           </h2>
         </div>
         <table style={{ width: "100%" }}>

@@ -121,7 +121,7 @@ button {
   width: 190px;
   margin-right: 10px;
   display: inline-block;
-  height: 3667px;
+  height: 3200px;
   .sub-menu-category {
     height: 42px;
     color: #ff5d5d;
@@ -144,6 +144,46 @@ button {
       padding: 0 0 0 38px;
       text-decoration: none;
       word-spacing: -1px;
+    }
+  }
+}
+#main {
+  .main-banner {
+    height: 442px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    .main-banner-left {
+      width: 611px;
+      height: 100%;
+      .main-banner-left-img-wrapper {
+        width: 100%;
+        height: 413px;
+      }
+      .main-banner-left-img-changer {
+        border-top: 1px solid #dfdfdf;
+        height: 28px;
+        background: #5b5f63;
+        display: flex;
+        justify-content: space-between;
+        .main-banner-left-img-changer-button {
+          width: 122px;
+          background: #5b5f63;
+          height: 28px;
+          line-height: 26px;
+          color: #ffffff;
+          text-align: center;
+          font-size: 11px;
+          cursor: pointer;
+        }
+      }
+    }
+    .main-banner-right {
+      width: 387px;
+      height: 100%;
+      display: flex;
+      justify-content: space-bewteen;
+      border: 1px solid gray;
     }
   }
 }

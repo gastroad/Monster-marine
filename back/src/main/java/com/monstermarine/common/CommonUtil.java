@@ -1,14 +1,8 @@
 package com.monstermarine.common;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.monstermarine.api.notice.NoticeVO;
 import org.springframework.http.HttpStatus;
 
-import java.beans.BeanInfo;
-import java.beans.Introspector;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
@@ -64,18 +58,38 @@ public class CommonUtil {
         return obj;
     }
 
+    /**
+     * VO를 Map Wrapping
+     * @param key String
+     * @param obj Object
+     * @return
+     * @throws Exception
+     */
     public static Map coverVoToMap(String key, Object obj) {
         Map res = new HashMap();
         res.put(key, convertObjectToMap(obj));
         return res;
     }
 
+    /**
+     * List를 Map Wrapping
+     * @param key String
+     * @param dataList Object
+     * @return
+     * @throws Exception
+     */
     public static Map coverListToMap(String key, Object dataList) {
         Map res = new HashMap();
         res.put(key, dataList);
         return res;
     }
 
+    /**
+     * 등록, 수정, 삭제 후 성공여부 JSON으로 반환
+     * @param code int
+     * @return
+     * @throws Exception
+     */
     public static Map isWorkSuccess(int code) {
         Map res = new HashMap();
         res.put("code", HttpStatus.OK);
@@ -83,6 +97,12 @@ public class CommonUtil {
         return res;
     }
 
+    /**
+     * 등록, 수정, 삭제 후 성공여부 메세지 반환
+     * @param code int
+     * @return
+     * @throws Exception
+     */
     public static String isSuccessMessage(int code) {
         return (code == 1) ? "SUCCESS" : "FAILED";
     }

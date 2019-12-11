@@ -2,37 +2,49 @@ import React from "react"
 
 const Header = () => {
   return (
-    <>
-      <header
+    <header>
+      <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "24px"
+          height: "24px",
+          background: "#f8f8f8",
+          borderBottom: "1px solid #e3e3e3",
+          textAlign: "center"
         }}
       >
-        <h1>
-          <img src={require("../../../assets/img/logo.png").default} />
-        </h1>
-        <div className="header-input-wrapper">
-          <input />
-          <div className="search-icon">
-            <img src={require("../../../assets/img/search.png").default} />
-          </div>
-        </div>
-      </header>
-      <nav
+        즐겨찾기
+      </div>
+      <div
         style={{
-          marginBottom: "20px"
+          height: "168px",
+          width: "100%",
+          textAlign: "center",
+          margin: "0 0 15px 0"
         }}
       >
-        <div style={{ display: "flex" }}>
-          <span className={"nav-list-item"}>전체카테고리</span>
-          <span className={"nav-list-item"}>브랜드</span>
-          <span className={"nav-list-item"}>전체 상품</span>
+        <div
+          style={{
+            height: "108px",
+            width: "1200px",
+            margin: "0 auto",
+            position: "relative"
+          }}
+        >
+          zxc
         </div>
-        <span className={"nav-list-item"}>사용 후기</span>
-      </nav>
-    </>
+        <div
+          style={{
+            margin: "20px 0 0px 0",
+            clear: "both",
+            borderBottom: "0px solid #ff0000",
+            borderTop: "0px solid #ff0000",
+            background: "#ff0000",
+            height: "40px"
+          }}
+        >
+          qwe
+        </div>
+      </div>
+    </header>
   )
 }
 export default Header

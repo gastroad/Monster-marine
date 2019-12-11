@@ -28,6 +28,7 @@ public class NoticeController {
 	 */
 	@RequestMapping(value = "/{noticeId}", method = RequestMethod.GET)
 	public Map getNotice(NoticeVO noticeVO, @PathVariable int noticeId) throws Exception {
+		/* TODO: Date ISO-8601 지정 */
 		noticeVO.setNoticeId(noticeId);
 		return CommonUtil.coverVoToMap("notice", noticeMapper.getNotice(noticeVO));
 	}

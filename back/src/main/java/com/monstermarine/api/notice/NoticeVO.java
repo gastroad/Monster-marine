@@ -6,7 +6,7 @@ public class NoticeVO {
 
     private int noticeId;
     private String title;
-    private String content;
+    private String contents;
     private Date createDate;
     private Date updateDate;
     private String userId;
@@ -31,12 +31,12 @@ public class NoticeVO {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getContents() {
+        return contents;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 
     public Date getCreateDate() {

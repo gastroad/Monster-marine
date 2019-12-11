@@ -16,22 +16,22 @@ public interface NoticeMapper {
     /**
      * 공지사항 목록 조회
      */
-    public Map getNoticeList(Map map) throws Exception;
+    public List getNoticeList(NoticeVO noticeVO) throws Exception;
 
     /**
      * 공지사항 등록
      */
-    public Map insertNotice(Map map) throws Exception;
+    public int insertNotice(NoticeVO noticeVO) throws Exception;
 
     /**
      * 공지사항 수정
      */
-    public Map updateNotice(Map map) throws Exception;
+    public int updateNotice(NoticeVO noticeVO) throws Exception;
 
     /**
      * 공지사항 삭제
      */
-    public  Map deleteNotice(Map map) throws Exception;
+    public  int deleteNotice(NoticeVO noticeVO) throws Exception;
 
 
 }

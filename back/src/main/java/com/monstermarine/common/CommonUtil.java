@@ -3,6 +3,7 @@ package com.monstermarine.common;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.monstermarine.api.notice.NoticeVO;
+import org.springframework.http.HttpStatus;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;
@@ -61,6 +62,29 @@ public class CommonUtil {
             }
         }
         return obj;
+    }
+
+    public static Map coverVoToMap(String key, Object obj) {
+        Map res = new HashMap();
+        res.put(key, convertObjectToMap(obj));
+        return res;
+    }
+
+    public static Map coverListToMap(String key, Object dataList) {
+        Map res = new HashMap();
+        res.put(key, dataList);
+        return res;
+    }
+
+    public static Map isWorkSuccess(int code) {
+        Map res = new HashMap();
+        res.put("code", HttpStatus.OK);
+        res.put("message", CommonUtil.isSuccessMessage(code));
+        return res;
+    }
+
+    public static String isSuccessMessage(int code) {
+        return (code == 1) ? "SUCCESS" : "FAILED";
     }
 
 }

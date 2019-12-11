@@ -6,11 +6,12 @@ const SmallBanner = () => {
   return (
     <div
       style={{
-        height: "260px"
+        height: "260px",
+        display: "flex",
+        justifyContent: "space-bewteen"
       }}
     >
       <SmallBannerLeft />
-
       <SmallBannerRight />
     </div>
   )

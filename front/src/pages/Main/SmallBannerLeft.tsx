@@ -5,12 +5,26 @@ const SmallBannerLeft = () => {
     <div
       style={{
         width: "325px",
-        display: "inline-block",
-        backgroundColor: "red",
         height: "100%"
       }}
     >
-      스몰배너 사진
+      <h2
+        style={{
+          height: "28px",
+          lineHeight: "28px",
+          fontWeight: "bold",
+          color: "#43474a",
+          fontSize: "15px"
+        }}
+      >
+        <strong style={{ color: "#ff0000" }}>HOT</strong> PRICE
+      </h2>
+      <div style={{ marginBottom: "10px" }}>
+        <img src={require("../../../assets/img/test7.jpg").default} />
+      </div>
+      <div>
+        <img src={require("../../../assets/img/test7.jpg").default} />
+      </div>
     </div>
   )
 }

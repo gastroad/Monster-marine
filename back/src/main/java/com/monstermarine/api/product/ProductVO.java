@@ -19,6 +19,7 @@ public class ProductVO {
     private int attechment9;
     private int attechment10;
     private boolean isDelete;
+    private String userId;
     private Date createDate;
     private Date updateDate;
 
@@ -140,6 +141,14 @@ public class ProductVO {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Date getCreateDate() {

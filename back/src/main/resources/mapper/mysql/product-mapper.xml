@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="product">
+<mapper namespace="com.monstermarine.api.product.ProductMapper">
 
-	<select id="getProduct" resultType="resultmap" parameterType="map">
+	<select id="getProduct" resultType="productVO" parameterType="productVO">
 		/*
 			SQL ID : com.monstermarine.api.product.getProduct
 			설명 : 상품 상세 조회
 		*/
 		SELECT
-			PRODUCT_SEQ,
+			PRODUCT_ID,
 			TITLE,
 			CONTENTS,
 			PRICE,
@@ -31,16 +31,16 @@
 		FROM
 			MONSTER_MARINE.PRODUCT
 		WHERE
-			PRODUCT_SEQ = #{productSeq}
+			PRODUCT_ID = #{productId}
 	</select>
 
-	<select id="getProductList" resultType="resultmap" parameterType="map">
+	<select id="getProductList" resultType="java.util.HashMap" parameterType="productVO">
 		/*
 			SQL ID : com.monstermarine.api.product.getProductList
 			설명 : 상품 목록 조회
 		*/
 		SELECT
-			PRODUCT_SEQ,
+			PRODUCT_ID,
 			TITLE,
 			CONTENTS,
 			PRICE,
@@ -64,7 +64,7 @@
 			IS_DELETE = false
 	</select>
 
-	<insert id="insertProduct" parameterType="resultmap">
+	<insert id="insertProduct" parameterType="productVO">
 		/*
 			SQL ID : com.monstermarine.api.product.insertProduct
 			설명 : 상품 등록
@@ -146,7 +146,7 @@
 		)
 	</insert>
 
-	<update id="updateProduct" parameterType="resultmap">
+	<update id="updateProduct" parameterType="productVO">
 		/*
 			SQL ID : com.monstermarine.api.product.updateProduct
 			설명 : 상품 수정
@@ -189,10 +189,10 @@
 			USER_ID = #{userId},
 			UPDATE_DATE = now()
 		WHERE
-			PRODUCT_SEQ = #{productSeq}
+			PRODUCT_ID = #{productId}
 	</update>
 
-	<update id="deleteProduct" parameterType="map">
+	<update id="deleteProduct" parameterType="productVO">
 		/*
 			SQL ID : com.monstermarine.api.product.deleteProduct
 			설명 : 공지사항 삭제
@@ -201,7 +201,7 @@
 		SET
 			IS_DELETE = true
 		WHERE
-			PRODUCT_SEQ = #{productSeq}
+			PRODUCT_ID = #{productId}
 	</update>
 
 </mapper>

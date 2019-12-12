@@ -15,6 +15,7 @@
 	<typeAliases>
 		<typeAlias alias="resultmap" type="com.monstermarine.common.ResultMap" />
 		<typeAlias alias="noticeVO" type="com.monstermarine.api.notice.NoticeVO" />
+		<typeAlias alias="productVO" type="com.monstermarine.api.product.ProductVO" />
 	</typeAliases>
 	
 </configuration>

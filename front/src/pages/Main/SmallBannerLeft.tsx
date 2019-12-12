@@ -1,6 +1,7 @@
 import React from "react"
 
 const SmallBannerLeft = () => {
+  console.log(require("../../../assets/img/test7.jpg"))
   return (
     <div
       style={{
@@ -20,10 +21,10 @@ const SmallBannerLeft = () => {
         <strong style={{ color: "#ff0000" }}>HOT</strong> PRICE
       </h2>
       <div style={{ marginBottom: "10px" }}>
-        <img src={require("../../../assets/img/test7.jpg").default} />
+        <img src={require("../../../assets/img/test7.jpg")} />
       </div>
       <div>
-        <img src={require("../../../assets/img/test7.jpg").default} />
+        <img src={require("../../../assets/img/test7.jpg")} />
       </div>
     </div>
   )

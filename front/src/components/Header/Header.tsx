@@ -35,7 +35,7 @@ const Header = () => {
               width: "227px",
               height: "98px"
             }}
-            src={require("../../../assets/img/logo.png").default}
+            src={require("../../../assets/img/logo.png")}
           />
           <div style={{ position: "absolute", right: "0px", top: "78px" }}>
             <span

@@ -15,10 +15,10 @@ const MainBannerRight = () => {
             height: "277px"
           }}
         >
-          <img src={require("../../../assets/img/test4.jpg").default} />
+          <img src={require("../../../assets/img/test4.jpg")} />
         </div>
         <div style={{ width: "100%", height: "165px" }}>
-          <img src={require("../../../assets/img/test5.jpg").default} />
+          <img src={require("../../../assets/img/test5.jpg")} />
         </div>
       </div>
       <div
@@ -28,10 +28,10 @@ const MainBannerRight = () => {
         }}
       >
         <div style={{ width: "100%", height: "277px" }}>
-          <img src={require("../../../assets/img/test4.jpg").default} />
+          <img src={require("../../../assets/img/test4.jpg")} />
         </div>
         <div style={{ width: "100%", height: "165px" }}>
-          <img src={require("../../../assets/img/test5.jpg").default} />
+          <img src={require("../../../assets/img/test5.jpg")} />
         </div>
       </div>
     </div>

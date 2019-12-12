@@ -58,7 +58,7 @@ export const Pagination: React.FunctionComponent<PropsType> = props => {
         }}
       >
         <img
-          src={require("../../../assets/img/paging2.png").default}
+          src={require("../../../assets/img/paging2.png")}
           alt="처음"
         />
       </a>
@@ -69,7 +69,7 @@ export const Pagination: React.FunctionComponent<PropsType> = props => {
         }}
       >
         <img
-          src={require("../../../assets/img/paging3.png").default}
+          src={require("../../../assets/img/paging3.png")}
           alt="처음"
         />
       </a>

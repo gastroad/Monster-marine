@@ -11,7 +11,7 @@ const ProductItem = () => {
       >
         <img
           style={{ width: "140px" }}
-          src={require("../../../assets/img/test3.jpg").default}
+          src={require("../../../assets/img/test3.jpg")}
         />
       </div>
       <div style={{ width: "140px", textAlign: "center" }}>
@@ -50,9 +50,9 @@ const ProductItem = () => {
           </a>
         </div>
         <div>
-          <img src={require("../../../assets/img/product1.gif").default} />
-          <img src={require("../../../assets/img/product2.gif").default} />
-          <img src={require("../../../assets/img/product3.gif").default} />
+          <img src={require("../../../assets/img/product1.gif")} />
+          <img src={require("../../../assets/img/product2.gif")} />
+          <img src={require("../../../assets/img/product3.gif")} />
         </div>
       </div>
     </>

@@ -20,7 +20,7 @@ const Main = () => {
             height: "246px"
           }}
         >
-          <img src={require("../../../assets/img/test6.jpg").default} />
+          <img src={require("../../../assets/img/test6.jpg")} />
         </div>
         <ProductList />
         <ProductList />

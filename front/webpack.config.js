@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.(bmp|gif|jpe?g|png)$/,
         loader: "file-loader",
-        options: { name: "images/[name].[hash:6].[ext]" }
+        options: { name: "images/[name].[hash:6].[ext]", esModule: false }
       },
       {
         test: /\.(eot|ttf|otf|woff2?)$/,

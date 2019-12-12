@@ -11,7 +11,7 @@ const SmallBannerRightPrdoduct = () => {
       >
         <img
           style={{ width: "108px" }}
-          src={require("../../../assets/img/test3.jpg").default}
+          src={require("../../../assets/img/test3.jpg")}
         />
       </div>
       <div

@@ -2,7 +2,7 @@ import React from "react"
 
 const ProductItem = () => {
   return (
-    <>
+    <div style={{ width: "166px" }}>
       <div
         style={{
           textAlign: "center",
@@ -55,7 +55,7 @@ const ProductItem = () => {
           <img src={require("../../../assets/img/product3.gif")} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 export default ProductItem

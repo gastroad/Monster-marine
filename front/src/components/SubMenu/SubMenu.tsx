@@ -1,4 +1,5 @@
 import React from "react"
+import "./subMenu.scss"
 
 const SubMenu = () => {
   return (

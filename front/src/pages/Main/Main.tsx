@@ -2,6 +2,8 @@ import React from "react"
 import ProductList from "./ProductList"
 import MainBanner from "./MainBanner"
 import SmallBanner from "./SmallBanner"
+
+import "./Main.scss"
 const Main = () => {
   return (
     <section

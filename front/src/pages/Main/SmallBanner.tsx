@@ -4,13 +4,7 @@ import SmallBannerRight from "./SmallBannerRight"
 
 const SmallBanner = () => {
   return (
-    <div
-      style={{
-        height: "260px",
-        display: "flex",
-        justifyContent: "space-bewteen"
-      }}
-    >
+    <div className={"small-banner"}>
       <SmallBannerLeft />
       <SmallBannerRight />
     </div>

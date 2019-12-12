@@ -20,7 +20,7 @@ const Header = () => {
           <div className={"main-header-search-wrapper"}>
             <span className={"main-header-search"}>
               <input placeholder="스네이크헤드" />
-              <div></div>
+              <img src={require("../../../assets/img/test9.jpg")} />
             </span>
           </div>
         </div>

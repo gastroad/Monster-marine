@@ -186,6 +186,31 @@ button {
       border: 1px solid gray;
     }
   }
+  .small-banner {
+    height: 260px;
+    display: flex;
+    justify-content: space-bewteen;
+    .small-banner-right {
+      width: 675px;
+      height: 100%;
+      .small-banner-right-menu {
+        height: 37px;
+        text-align: center;
+        letter-spacing: -1px;
+        outline: 2px solid #8b8e90;
+        .small-banner-right-menu-tab {
+          display: inline;
+          // height: 37px;
+          line-height: 35px;
+          font-size: 12px;
+          cursor: pointer;
+          padding: 0 30px;
+          color: #666666;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
 
 header {
@@ -208,7 +233,8 @@ header {
         right: 0px;
         top: 78px;
         .main-header-search {
-          display: inline-block;
+          display: flex;
+          justify-content: space-between;
           border: 3px solid #ff0000;
           width: 342px;
           input {
@@ -218,6 +244,7 @@ header {
             border: none;
             background: none;
             margin-left: 5px;
+            outline: none;
           }
         }
       }
@@ -247,5 +274,22 @@ header {
         }
       }
     }
+  }
+}
+
+.h2-sub-header {
+  height: 28px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #43474a;
+  font-size: 15px;
+  strong {
+    color: #ff0000;
+  }
+  span {
+    font-weight: normal;
+    color: #999999;
+    font-size: 12px;
+    letter-spacing: -1px;
   }
 }

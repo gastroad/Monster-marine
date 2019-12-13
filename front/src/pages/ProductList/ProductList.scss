@@ -2,7 +2,42 @@
   .product-list-header {
     margin-bottom: 20px;
     margin-top: 9px;
+    .product-list-header-top {
+      display: flex;
+      justify-content: space-between;
+      .product-list-header-top-category-name {
+        color: #5b5b5b;
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 20px;
+      }
+      .product-list-header-top-category-path {
+        color: #8e8e8e;
+        font-size: 10px;
+      }
+    }
+    .product-list-header-bottom {
+      ul {
+        display: flex;
+        margin-top: 10px;
+        padding-left: 25px;
+        li {
+          color: #777777;
+          font-size: 10px;
+          line-height: 30px;
+          margin: 0px 15px;
+          cursor: pointer;
+        }
+      }
+    }
   }
   .product-list-content {
+    fieldset {
+      text-align: right;
+      select {
+        width: 120px;
+        font-size: 12px;
+      }
+    }
   }
 }

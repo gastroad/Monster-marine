@@ -1,6 +1,6 @@
 import React from "react"
-
-const ProductItem = () => {
+interface PropTypes {}
+const ProductItem = (props: PropTypes) => {
   return (
     <div style={{ width: "166px" }}>
       <div
@@ -10,11 +10,11 @@ const ProductItem = () => {
         }}
       >
         <img
-          style={{ width: "140px" }}
+          style={{ width: "140px", cursor: "pointer" }}
           src={require("../../../assets/img/test3.jpg")}
         />
       </div>
-      <div style={{ width: "140px", textAlign: "center" }}>
+      <div style={{ textAlign: "center", width: "166px" }}>
         <div>
           <a
             style={{

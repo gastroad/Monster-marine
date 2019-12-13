@@ -72,23 +72,14 @@ const SubMenu = () => {
       </div>
       <div
         style={{
-          border: "1px solid #ff0000",
+          border: "1px solid  #ededed",
           marginBottom: "11px"
         }}
       >
-        <div
-          style={{
-            height: "135px",
-            background: "#FF0000",
-            borderBottom: "1px solid #ff0000"
-          }}
-        >
-          asd
-        </div>
         <div style={{ width: "188px" }}>
           <div
             style={{
-              borderBottom: "1px solid #ff0000",
+              borderBottom: "1px solid  #ededed",
               padding: "17px 0px 20px 17px"
             }}
           >

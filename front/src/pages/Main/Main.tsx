@@ -1,16 +1,21 @@
 import React from "react"
+
+import { API } from "@components/axios"
 import ProductList from "./ProductList"
 import MainBanner from "./MainBanner"
 import SmallBanner from "./SmallBanner"
 
 import "./Main.scss"
 const Main = () => {
+  React.useEffect(() => {
+    API.get("/category/").then(res => {})
+  }, [])
+
   return (
     <section
       style={{
         width: "1000px",
-        display: "inline-block",
-        height: "3200px"
+        display: "inline-block"
       }}
     >
       <article id="main">
@@ -24,7 +29,6 @@ const Main = () => {
         >
           <img src={require("../../../assets/img/test6.jpg")} />
         </div>
-        <ProductList />
         <ProductList />
         <ProductList />
       </article>

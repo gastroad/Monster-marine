@@ -1,12 +1,13 @@
 import React from "react"
-
-import Main from "./pages/Main"
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch
 } from "react-router-dom"
+
+import Main from "./pages/Main"
+import ProductList from "./pages/ProductList"
 
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -33,12 +34,7 @@ const App = () => {
             <>
               <Switch>
                 <Route path="/main" component={Main} />
-                <Route
-                  path="/test"
-                  component={() => {
-                    return <div>test</div>
-                  }}
-                />
+                <Route path="/product/:categoryID" component={ProductList} />
                 <Redirect to="/main" />
               </Switch>
             </>

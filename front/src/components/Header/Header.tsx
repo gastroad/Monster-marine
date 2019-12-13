@@ -38,14 +38,10 @@ const Header = () => {
                 <col width="*" />
                 <col width="*" />
                 <col width="*" />
-                <col width="*" />
-                <col width="*" />
               </colgroup>
               <tbody>
                 <tr>
                   <td>전체 카테고리</td>
-                  <td>자주찾는 품목</td>
-                  <td>브랜드 보기</td>
                   <td>고무보트</td>
                   <td>콤비보트</td>
                   <td>선외기</td>

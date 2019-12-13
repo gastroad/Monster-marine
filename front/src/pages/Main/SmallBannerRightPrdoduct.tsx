@@ -21,21 +21,21 @@ const SmallBannerRightPrdoduct = () => {
           margin: "0px auto"
         }}
       >
-        <div
-          style={{
-            height: "29px"
-          }}
-        >
+        <div>
           <a
             style={{
               display: "inline-block",
               color: "#909090",
               fontSize: "11px",
               margin: "0 0 3px 0",
-              letterSpacing: "-0.5px"
+              letterSpacing: "-0.5px",
+              width: "108px",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap"
             }}
           >
-            민코타 엔듀라 MAX 45] 맥시마이저 ..
+            스네이크헤드 370KIB + 스네이크헤드 370KIB +
           </a>
         </div>
         <div style={{ padding: "2px", height: "22px" }}>

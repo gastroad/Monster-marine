@@ -85,7 +85,7 @@ const SubMenu = () => {
           >
             <div style={{ color: "#444", paddingBottom: "3px" }}>CS CENTER</div>
             <div
-              style={{ color: "#ff0000", fontWeight: "bold", fontSize: "12px" }}
+              style={{ color: "black", fontWeight: "bold", fontSize: "12px" }}
             >
               고객상담
             </div>

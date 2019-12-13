@@ -21,7 +21,22 @@ const Header = () => {
           <div className={"main-header-search-wrapper"}>
             <span className={"main-header-search"}>
               <input placeholder="스네이크헤드" />
-              <img src={require("../../../assets/img/test9.jpg")} />
+              <div
+                style={{
+                  width: "33px",
+                  height: "25px",
+                  outline: "3px solid black",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <img
+                  style={{
+                    width: "25px"
+                  }}
+                  src={require("../../../assets/img/search.png")}
+                />
+              </div>
             </span>
           </div>
         </div>

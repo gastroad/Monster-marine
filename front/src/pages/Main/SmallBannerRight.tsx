@@ -12,7 +12,7 @@ const SmallBannerRight = () => {
         }}
       >
         <div className="small-banner-right-menu">
-          <div className="small-banner-right-menu-tab" style={{ color: "red" }}>
+          <div className="small-banner-right-menu-tab" style={{ color: "black" }}>
             보트
           </div>
           <div className="small-banner-right-menu-tab">콤비보트</div>

@@ -6,9 +6,15 @@ const SmallBannerRight = () => {
       <h2 className={"h2-sub-header"}>
         <strong>WEEKLY</strong> BEST
       </h2>
-      <div>
+      <div
+        style={{
+          outline: " 1px solid #8b8e90"
+        }}
+      >
         <div className="small-banner-right-menu">
-          <div className="small-banner-right-menu-tab">보트</div>
+          <div className="small-banner-right-menu-tab" style={{ color: "red" }}>
+            보트
+          </div>
           <div className="small-banner-right-menu-tab">콤비보트</div>
           <div className="small-banner-right-menu-tab">선외기</div>
           <div className="small-banner-right-menu-tab">가이드모터</div>

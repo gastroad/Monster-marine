@@ -29,9 +29,9 @@ public class ProductController {
 	/**
 	 * 상품 상세 조회
 	 */
-	@RequestMapping(value = "/{productSeq}", method = RequestMethod.GET)
-	public Map getProduct(ProductVO productVO, @PathVariable int productSeq) throws Exception {
-		productVO.setProductId(productSeq);
+	@RequestMapping(value = "/{productId}", method = RequestMethod.GET)
+	public Map getProduct(ProductVO productVO, @PathVariable int productId) throws Exception {
+		productVO.setProductId(productId);
 		return CommonUtil.coverVoToMap("product", productMapper.getProduct(productVO));
 	}
 	
@@ -55,16 +55,16 @@ public class ProductController {
 	/**
 	 * 상품 수정
 	 */
-	@RequestMapping(value = "/{productSeq}", method = RequestMethod.PUT)
-	public Map updateProduct(ProductVO productVO, @PathVariable int productSeq) throws Exception {
+	@RequestMapping(value = "/{productId}", method = RequestMethod.PUT)
+	public Map updateProduct(ProductVO productVO, @PathVariable int productId) throws Exception {
 		return CommonUtil.isWorkSuccess(productMapper.updateProduct(productVO));
 	}
 	
 	/**
 	 * 상품 삭제
 	 */
-	@RequestMapping(value = "/{productSeq}/delete", method = RequestMethod.PUT)
-	public Map deleteProduct(ProductVO productVO, @PathVariable int productSeq) throws Exception {
+	@RequestMapping(value = "/{productId}/delete", method = RequestMethod.PUT)
+	public Map deleteProduct(ProductVO productVO, @PathVariable int productId) throws Exception {
 		return CommonUtil.isWorkSuccess(productMapper.deleteProduct(productVO));
 	}
 	

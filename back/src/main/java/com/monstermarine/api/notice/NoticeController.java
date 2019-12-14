@@ -36,7 +36,7 @@ public class NoticeController {
 	/**
 	 * 공지사항 목록 조회
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public Map getNoticeList(NoticeVO noticeVO) throws Exception {
 		return CommonUtil.coverListToMap("notice", noticeMapper.getNoticeList(noticeVO));
 	}
@@ -44,7 +44,7 @@ public class NoticeController {
 	/**
 	 * 공지사항 등록
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	public Map insertNotice(NoticeVO noticeVO) throws Exception {
 		return CommonUtil.isWorkSuccess(noticeMapper.insertNotice(noticeVO));
 	}

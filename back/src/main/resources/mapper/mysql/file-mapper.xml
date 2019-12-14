@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.monstermarine.api.file.FileMapper">
+
+	<select id="getPath" resultType="fileVO" parameterType="fileVO">
+		/*
+			SQL ID : com.monstermarine.api.file.getPath
+			설명 : 공지사항 상세 조회
+		*/
+		SELECT
+			FILE_ID
+			, STATUS
+			, ORIGINAL_FILE_NAME
+			, PYSICAL_FILE_NAME
+		FROM
+			MONSTER_MARINE.FILE
+		<where>
+			<if test="fileId != null and fileId != ''">AND FILE_ID = #{fileId}</if>
+		</where>
+	</select>
+	
+</mapper>

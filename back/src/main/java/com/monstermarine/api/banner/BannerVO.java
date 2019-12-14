@@ -2,6 +2,16 @@ package com.monstermarine.api.banner;
 
 import java.sql.Date;
 
+/**
+ * @프로그램명		: 배너
+ * @프로그램 설명 	: 배너 VO
+ * @FileName		: BannerVO.java
+ * @Project			: MONSTER MARINE
+ * @Date			: 2019. 12. 08.
+ * @작성자			: selectjun
+ * @ Copyright ⓒ SELECTJUN. All Right Reserved
+ * @변경이력    	:
+ */
 public class BannerVO {
 
     private int bannerId;

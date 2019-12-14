@@ -9,6 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+/**
+ * @프로그램명		: 파일
+ * @프로그램 설명 	: 파일 Controller
+ * @FileName		: FileController.java
+ * @Project			: MONSTER MARINE
+ * @Date			: 2019. 12. 08.
+ * @작성자			: selectjun
+ * @ Copyright ⓒ SELECTJUN. All Right Reserved
+ * @변경이력    	:
+ */
 @RestController
 @RequestMapping("/file")
 public class FileController {

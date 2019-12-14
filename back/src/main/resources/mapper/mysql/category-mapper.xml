@@ -7,7 +7,7 @@
 	<select id="getCategory" resultType="categoryVO" parameterType="categoryVO">
 		/*
 			SQL ID : com.monstermarine.api.category.getCategory
-			설명 : 카테고리 목록 조회
+			설명 : 카테고리 상세 조회
 		*/
 		SELECT
 			CATEGORY_ID,
@@ -42,8 +42,8 @@
 
 	<select id="getCategoryDepth1" resultType="java.util.HashMap" parameterType="categoryVO">
 		/*
-			SQL ID : com.monstermarine.api.category.getCategoryDepth1
-			설명 : 카테고리 DEPTH1 조회
+			SQL ID : com.monstermarine.api.category.getCategoryDepth1List
+			설명 : 카테고리 DEPTH1 목록 조회
 		*/
 		SELECT
 			CATEGORY_ID,
@@ -56,8 +56,8 @@
 
 	<select id="getCategoryDepth2" resultType="java.util.HashMap" parameterType="categoryVO">
 		/*
-			SQL ID : com.monstermarine.api.category.getCategoryDepth2
-			설명 : 카테고리 DEPTH2 조회
+			SQL ID : com.monstermarine.api.category.getCategoryDepth2List
+			설명 : 카테고리 DEPTH2 목록 조회
 		*/
 		SELECT
 			CATEGORY_ID,

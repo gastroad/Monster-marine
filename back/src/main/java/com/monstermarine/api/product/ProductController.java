@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @업무명			: 상품 관리
- * @프로그램 설명 	: 상품을 관리한다.
+ * @프로그램명		: 상품
+ * @프로그램 설명 	: 상품 Controller
  * @FileName		: ProductController.java
  * @Project			: MONSTER MARINE
  * @Date			: 2019. 12. 08.

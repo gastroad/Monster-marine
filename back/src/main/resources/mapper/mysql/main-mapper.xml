@@ -47,7 +47,7 @@
 	<select id="getHotPriceList" resultType="java.util.HashMap" parameterType="bannerVO">
 		/*
 		SQL ID : com.monstermarine.api.banner.getHotPriceList
-		설명 : Main Banner 목록 조회
+		설명 : Hot Price 목록 조회
 		*/
 		SELECT
 		BANNER_ID

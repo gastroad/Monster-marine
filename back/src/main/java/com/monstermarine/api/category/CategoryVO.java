@@ -1,5 +1,15 @@
 package com.monstermarine.api.category;
 
+/**
+ * @프로그램명		: 카테고리
+ * @프로그램 설명 	: 카테고리 VO
+ * @FileName		: CategoryVO.java
+ * @Project			: MONSTER MARINE
+ * @Date			: 2019. 12. 08.
+ * @작성자			: selectjun
+ * @ Copyright ⓒ SELECTJUN. All Right Reserved
+ * @변경이력    	:
+ */
 public class CategoryVO {
 
     private int categoryId;

@@ -2,6 +2,16 @@ package com.monstermarine.api.notice;
 
 import java.sql.Date;
 
+/**
+ * @프로그램명		: 공지사항
+ * @프로그램 설명 	: 공지사항 VO
+ * @FileName		: NoticeVO.java
+ * @Project			: MONSTER MARINE
+ * @Date			: 2019. 12. 08.
+ * @작성자			: selectjun
+ * @ Copyright ⓒ SELECTJUN. All Right Reserved
+ * @변경이력    	:
+ */
 public class NoticeVO {
 
     private int noticeId;

@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @업무명			: 공지사항 관리
- * @프로그램 설명 	: 공지사항을 관리한다.
+ * @프로그램명		: 공지사항
+ * @프로그램 설명 	: 공지사항 Controller
  * @FileName		: NoticeController.java
  * @Project			: MONSTER MARINE
  * @Date			: 2019. 12. 08.

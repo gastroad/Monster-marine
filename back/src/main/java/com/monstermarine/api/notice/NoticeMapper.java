@@ -4,6 +4,16 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+/**
+ * @프로그램명		: 공지사항
+ * @프로그램 설명 	: 공지사항 Mapper
+ * @FileName		: NoticeMapper.java
+ * @Project			: MONSTER MARINE
+ * @Date			: 2019. 12. 08.
+ * @작성자			: selectjun
+ * @ Copyright ⓒ SELECTJUN. All Right Reserved
+ * @변경이력         :
+ */
 @Mapper
 public interface NoticeMapper {
 
@@ -31,6 +41,5 @@ public interface NoticeMapper {
      * 공지사항 삭제
      */
     public  int deleteNotice(NoticeVO noticeVO) throws Exception;
-
 
 }

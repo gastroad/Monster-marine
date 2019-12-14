@@ -6,6 +6,16 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.*;
 
+/**
+ * @프로그램명		: 유틸
+ * @프로그램 설명 	: 유틸
+ * @FileName		: CommonUtil.java
+ * @Project			: MONSTER MARINE
+ * @Date			: 2019. 12. 08.
+ * @작성자			: selectjun
+ * @ Copyright ⓒ SELECTJUN. All Right Reserved
+ * @변경이력    		:
+ */
 public class CommonUtil {
 
     /**

@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @업무명			: 카테고리 관리
- * @프로그램 설명 	: 카테고리를 관리한다.
+ * @프로그램명		: 카테고리
+ * @프로그램 설명 	: 카테고리 Controller
  * @FileName		: CategoryController.java
  * @Project			: MONSTER MARINE
  * @Date			: 2019. 12. 08.

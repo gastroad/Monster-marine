@@ -1,10 +1,8 @@
 package com.monstermarine.api.main;
 
 import com.monstermarine.api.banner.BannerVO;
-import com.monstermarine.api.notice.NoticeVO;
 import com.monstermarine.common.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @업무명			: 공지사항 관리
- * @프로그램 설명 	: 공지사항을 관리한다.
+ * @프로그램명		: 메인
+ * @프로그램 설명 	: 메인 Controller
  * @FileName		: NoticeController.java
  * @Project			: MONSTER MARINE
  * @Date			: 2019. 12. 08.
@@ -25,15 +23,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/main")
 public class MainController {
-	/*
-		Request URL / http://monster-marin.com/api/main/prdocutList?seq=1
-		Request URL / http://monster-marin.com/api/main/weeklybest
-		Request URL /  http://monster-marin.com/api/main/layout
-			-> main banner
-			-> sub banner
-			-> hot price
 
-	*/
 	@Autowired
 	private MainMapper mainMapper;
 
@@ -57,6 +47,4 @@ public class MainController {
 		return CommonUtil.coverListToMap("hotPrice", mainMapper.getHotPriceList(bannerVO));
 	}
 
-
-	
 }

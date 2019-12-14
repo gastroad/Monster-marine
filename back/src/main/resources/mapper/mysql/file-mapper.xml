@@ -7,7 +7,7 @@
 	<select id="getPath" resultType="fileVO" parameterType="fileVO">
 		/*
 			SQL ID : com.monstermarine.api.file.getPath
-			설명 : 공지사항 상세 조회
+			설명 : 파일 경로 조회
 		*/
 		SELECT
 			FILE_ID

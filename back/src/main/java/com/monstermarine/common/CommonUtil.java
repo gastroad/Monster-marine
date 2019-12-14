@@ -67,7 +67,14 @@ public class CommonUtil {
      */
     public static Map coverVoToMap(String key, Object obj) {
         Map res = new HashMap();
-        res.put(key, convertObjectToMap(obj));
+
+        if (obj != null) {
+            res.put(key, convertObjectToMap(obj));
+        } else {
+            res.put("code", 500);
+            res.put("message", isSuccessMessage(0));
+        }
+
         return res;
     }
 

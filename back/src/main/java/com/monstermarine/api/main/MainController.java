@@ -130,10 +130,10 @@ public class MainController {
 	/**
 	 * 상품 목록 조회
 	 */
-	@RequestMapping(value = "/product/{status}", method = RequestMethod.GET)
+	@RequestMapping(value = "/productList/{status}", method = RequestMethod.GET)
 	public Map getMainProductList(MainProductVO mainProductVO, @PathVariable String status) throws Exception {
 		mainProductVO.setStatus(status);
-		return null;
+		return CommonUtil.coverListToMap("mainProductList", mainMapper.getMainProductList(mainProductVO));
 	}
 
 

@@ -27,7 +27,7 @@
 	<select id="getSubBannerList" resultType="java.util.HashMap" parameterType="bannerVO">
 		/*
 		SQL ID : com.monstermarine.api.main.getSubBannerList
-		설명 : Main Banner 목록 조회
+		설명 : Sub Banner 목록 조회
 		*/
 		SELECT
 			BANNER_ID
@@ -67,7 +67,7 @@
 	<select id="getWeeklyBestCategoryNameList" resultType="lowerHashMap" parameterType="mainProductVO">
 		/*
 		SQL ID : com.monstermarine.api.main.getWeeklyBestCategoryNameList
-		설명 : Weekly Best 목록 조회
+		설명 : Weekly Best 카테고리 목록 조회
 		*/
 		SELECT
     		DISTINCT (
@@ -86,20 +86,65 @@
 	<select id="getWeeklyBestCategoryDataList" resultType="lowerHashMap" parameterType="mainProductVO">
 		/*
 		SQL ID : com.monstermarine.api.main.getWeeklyBestCategoryDataList
-		설명 : Weekly Best 카데고리 목록 조회
-		TODO: PRODUCT 서브쿼리로 PRICE, PRODUCT_ID, RENTAL_PRICE, NAME
+		설명 : Weekly Best 목록 조회
 		*/
 		SELECT
-    		MAIN_PRODUCT_ID
-    		, PRODUCT_ID
+    		A.MAIN_PRODUCT_ID
+    		, B.PRODUCT_ID
+    		, B.TITLE
+    		, B.PRICE
+    		, B.ATTECHMENT1
+			, B.ATTECHMENT2
+			, B.ATTECHMENT3
+			, B.ATTECHMENT4
+			, B.ATTECHMENT5
+			, B.ATTECHMENT6
+			, B.ATTECHMENT7
+			, B.ATTECHMENT8
+			, B.ATTECHMENT9
+			, B.ATTECHMENT10
 		FROM
-    		MONSTER_MARINE.MAIN_PRODUCT
+    		MONSTER_MARINE.MAIN_PRODUCT AS A
+    	JOIN
+    		MONSTER_MARINE.PRODUCT AS B
     	<where>
-			STATUS = "WEEKLY_BEST"
+    		A.PRODUCT_ID = B.PRODUCT_ID
+			AND STATUS = "WEEKLY_BEST"
 			<choose>
 				<when test="categoryId eq null and categoryId eq ''">AND CATEGORY_ID = #{categoryId}</when>
 				<otherwise>AND CATEGORY_ID IS NULL</otherwise>
 			</choose>
+		</where>
+	</select>
+
+	<select id="getMainProductList" resultType="lowerHashMap" parameterType="mainProductVO">
+		/*
+		SQL ID : com.monstermarine.api.main.getMainProductList
+		설명 : 메인 상품 목록 조회
+		*/
+		SELECT
+			MAIN_PRODUCT_ID
+			, (SELECT NAME FROM MONSTER_MARINE.CATEGORY AS B WHERE B.CATEGORY_ID = A.CATEGORY_ID) AS CATEGORY_NAME
+			, C.PRODUCT_ID
+			, C.TITLE
+			, C.PRICE
+			, C.ATTECHMENT1
+			, C.ATTECHMENT2
+			, C.ATTECHMENT3
+			, C.ATTECHMENT4
+			, C.ATTECHMENT5
+			, C.ATTECHMENT6
+			, C.ATTECHMENT7
+			, C.ATTECHMENT8
+			, C.ATTECHMENT9
+			, C.ATTECHMENT10
+		FROM
+    		MONSTER_MARINE.MAIN_PRODUCT AS A
+    	JOIN
+    		MONSTER_MARINE.PRODUCT AS C
+    	<where>
+    		A.PRODUCT_ID = C.PRODUCT_ID
+			<if test="status eq null and status eq ''">AND STATUS = #{status}</if>
 		</where>
 	</select>
 	

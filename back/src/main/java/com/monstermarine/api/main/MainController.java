@@ -57,48 +57,6 @@ public class MainController {
 	 */
 	@RequestMapping(value = "/weeklyBestList", method = RequestMethod.GET)
 	public Map getWeeklyBestList(MainProductVO mainProductVO) throws Exception {
-		/*
-			[
-				{
-    				title: "보트",
-    				productList: [
-  						{
-        					imgUrl: "www.naver.com",
-        					name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
-        					price: 123,
-        					retailPrice: 100,
-        					productId: 1
-      					},
-  						{
-        					imgUrl: "www.naver.com",
-        					name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
-        					price: 123,
-        					retailPrice: 100,
-        					productId: 1
-      					}
-    				]
-    			},
-    			{
-    				title: "선외기",
-    				productList: [
-      					{
-      						imgUrl: "www.naver.com",
-      						name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
-      						price: 123,
-      						retailPrice: 100,
-      						productId: 1
-      					},
-      					{
-      						imgUrl: "www.naver.com",
-      						name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
-      						price: 123,
-      						retailPrice: 100,
-      						productId: 1
-      					}
-    				]
-    			}
-    		]
-		*/
 		List returnDataList = new ArrayList();
 		List weeklyBestCategoryNameList = mainMapper.getWeeklyBestCategoryNameList(mainProductVO);
 
@@ -124,6 +82,7 @@ public class MainController {
 			// data 추가
 			returnDataList.add(tmpData);
 		}
+
 		return  CommonUtil.coverListToMap("weeklyBest", returnDataList);
 	}
 

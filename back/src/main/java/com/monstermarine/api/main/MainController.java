@@ -1,13 +1,18 @@
 package com.monstermarine.api.main;
 
 import com.monstermarine.api.banner.BannerVO;
+import com.monstermarine.api.category.CategoryVO;
+import com.monstermarine.api.mainProduct.MainProductVO;
 import com.monstermarine.common.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,5 +51,92 @@ public class MainController {
 	public Map getHotPriceList(BannerVO bannerVO) throws Exception {
 		return CommonUtil.coverListToMap("hotPrice", mainMapper.getHotPriceList(bannerVO));
 	}
+
+	/**
+	 * WeeklyBest 목록 조회
+	 */
+	@RequestMapping(value = "/weeklyBestList", method = RequestMethod.GET)
+	public Map getWeeklyBestList(MainProductVO mainProductVO) throws Exception {
+		/*
+			[
+				{
+    				title: "보트",
+    				productList: [
+  						{
+        					imgUrl: "www.naver.com",
+        					name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
+        					price: 123,
+        					retailPrice: 100,
+        					productId: 1
+      					},
+  						{
+        					imgUrl: "www.naver.com",
+        					name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
+        					price: 123,
+        					retailPrice: 100,
+        					productId: 1
+      					}
+    				]
+    			},
+    			{
+    				title: "선외기",
+    				productList: [
+      					{
+      						imgUrl: "www.naver.com",
+      						name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
+      						price: 123,
+      						retailPrice: 100,
+      						productId: 1
+      					},
+      					{
+      						imgUrl: "www.naver.com",
+      						name: "민코타 엔듀라 MAX 45] 맥시마이저 ..",
+      						price: 123,
+      						retailPrice: 100,
+      						productId: 1
+      					}
+    				]
+    			}
+    		]
+		*/
+		List returnDataList = new ArrayList();
+		List weeklyBestCategoryNameList = mainMapper.getWeeklyBestCategoryNameList(mainProductVO);
+
+		for (int i = 0; i < weeklyBestCategoryNameList.size(); i++) {
+			// temp 변수 선언
+			Map tmpData = new HashMap();
+			Map weeklyBestCategoryName = (HashMap) weeklyBestCategoryNameList.get(i);
+
+			// param 변수 선언
+			MainProductVO mainProductVO2 = new MainProductVO();
+			if (weeklyBestCategoryName.get("categoryId") !=  null) {
+				mainProductVO2.setCategoryId((int) weeklyBestCategoryName.get("categoryId"));
+			}
+
+			// data 조회
+			if (weeklyBestCategoryName.get("categoryId") !=  null) {
+				tmpData.put("name", weeklyBestCategoryName.get("categoryName"));
+			} else {
+				tmpData.put("name", "기타");
+			}
+			tmpData.put("productList", mainMapper.getWeeklyBestCategoryDataList(mainProductVO2));
+
+			// data 추가
+			returnDataList.add(tmpData);
+		}
+		return  CommonUtil.coverListToMap("weeklyBest", returnDataList);
+	}
+
+	/**
+	 * 상품 목록 조회
+	 */
+	@RequestMapping(value = "/product/{status}", method = RequestMethod.GET)
+	public Map getMainProductList(MainProductVO mainProductVO, @PathVariable String status) throws Exception {
+		mainProductVO.setStatus(status);
+		return null;
+	}
+
+
+
 
 }

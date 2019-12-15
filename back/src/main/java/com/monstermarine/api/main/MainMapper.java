@@ -1,6 +1,7 @@
 package com.monstermarine.api.main;
 
 import com.monstermarine.api.banner.BannerVO;
+import com.monstermarine.api.mainProduct.MainProductVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -32,6 +33,21 @@ public interface MainMapper {
      * HotPrice 목록 조회
      */
     public List getHotPriceList(BannerVO bannerVO) throws Exception;
+
+    /**
+     * WeeklyBest 카테고리 이름 목록 조회
+     */
+    public List getWeeklyBestCategoryNameList(MainProductVO mainProductVO) throws Exception;
+
+    /**
+     * WeeklyBest 카테고리 이름 목록 조회
+     */
+    public List getWeeklyBestCategoryDataList(MainProductVO mainProductVO) throws Exception;
+
+    /**
+     * 상품 목록 조회
+     */
+    public List getMainProductList(MainProductVO mainProductVO) throws Exception;
 
 
 }

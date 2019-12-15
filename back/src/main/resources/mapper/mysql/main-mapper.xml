@@ -6,17 +6,17 @@
 
 	<select id="getMainBannerList" resultType="java.util.HashMap" parameterType="bannerVO">
 		/*
-		SQL ID : com.monstermarine.api.banner.getMainBannerList
+		SQL ID : com.monstermarine.api.main.getMainBannerList
 		설명 : Main Banner 목록 조회
 		*/
 		SELECT
-		BANNER_ID
-		, STATUS
-		, TITLE
-		, FILE_ID
-		, LINK
-		, DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE
-		, DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE
+			BANNER_ID
+			, STATUS
+			, TITLE
+			, FILE_ID
+			, LINK
+			, DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE
+			, DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE
 		FROM
 		MONSTER_MARINE.BANNER
 		<where>
@@ -26,19 +26,19 @@
 
 	<select id="getSubBannerList" resultType="java.util.HashMap" parameterType="bannerVO">
 		/*
-		SQL ID : com.monstermarine.api.banner.getSubBannerList
+		SQL ID : com.monstermarine.api.main.getSubBannerList
 		설명 : Main Banner 목록 조회
 		*/
 		SELECT
-		BANNER_ID
-		, STATUS
-		, TITLE
-		, FILE_ID
-		, LINK
-		, DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE
-		, DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE
+			BANNER_ID
+			, STATUS
+			, TITLE
+			, FILE_ID
+			, LINK
+			, DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE
+			, DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE
 		FROM
-		MONSTER_MARINE.BANNER
+			MONSTER_MARINE.BANNER
 		<where>
 			STATUS = "SUB_BANNER"
 		</where>
@@ -46,21 +46,60 @@
 
 	<select id="getHotPriceList" resultType="java.util.HashMap" parameterType="bannerVO">
 		/*
-		SQL ID : com.monstermarine.api.banner.getHotPriceList
+		SQL ID : com.monstermarine.api.main.getHotPriceList
 		설명 : Hot Price 목록 조회
 		*/
 		SELECT
-		BANNER_ID
-		, STATUS
-		, TITLE
-		, FILE_ID
-		, LINK
-		, DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE
-		, DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE
+			BANNER_ID
+			, STATUS
+			, TITLE
+			, FILE_ID
+			, LINK
+			, DATE_FORMAT(START_DATE, '%Y-%m-%dT%TZ') AS START_DATE
+			, DATE_FORMAT(END_DATE, '%Y-%m-%dT%TZ') AS END_DATE
 		FROM
-		MONSTER_MARINE.BANNER
+			MONSTER_MARINE.BANNER
 		<where>
 			STATUS = "HOT_PRICE"
+		</where>
+	</select>
+
+	<select id="getWeeklyBestCategoryNameList" resultType="lowerHashMap" parameterType="mainProductVO">
+		/*
+		SQL ID : com.monstermarine.api.main.getWeeklyBestCategoryNameList
+		설명 : Weekly Best 목록 조회
+		*/
+		SELECT
+    		DISTINCT (
+        		SELECT
+            		CATEGORY.NAME
+        		FROM
+            		MONSTER_MARINE.CATEGORY
+        		WHERE
+            		CATEGORY.CATEGORY_ID = MAIN_PRODUCT.CATEGORY_ID
+    		) as CATEGORY_NAME
+    		, CATEGORY_ID
+		FROM
+    		MONSTER_MARINE.MAIN_PRODUCT
+	</select>
+
+	<select id="getWeeklyBestCategoryDataList" resultType="lowerHashMap" parameterType="mainProductVO">
+		/*
+		SQL ID : com.monstermarine.api.main.getWeeklyBestCategoryDataList
+		설명 : Weekly Best 카데고리 목록 조회
+		TODO: PRODUCT 서브쿼리로 PRICE, PRODUCT_ID, RENTAL_PRICE, NAME
+		*/
+		SELECT
+    		MAIN_PRODUCT_ID
+    		, PRODUCT_ID
+		FROM
+    		MONSTER_MARINE.MAIN_PRODUCT
+    	<where>
+			STATUS = "WEEKLY_BEST"
+			<choose>
+				<when test="categoryId eq null and categoryId eq ''">AND CATEGORY_ID = #{categoryId}</when>
+				<otherwise>AND CATEGORY_ID IS NULL</otherwise>
+			</choose>
 		</where>
 	</select>
 	

@@ -50,12 +50,12 @@ public class CategoryController {
 
 			// param 변수 선언
 			CategoryVO categoryVO2 = new CategoryVO();
-			categoryVO2.setDepth1((String) categoryDepth1Data.get("DEPTH1"));
+			categoryVO2.setDepth1((String) categoryDepth1Data.get("depth1"));
 
 			// data 조회
 			tmpData.put("depth2", categoryMapper.getCategoryDepth2(categoryVO2));
-			tmpData.put("name", categoryDepth1Data.get("NAME"));
-			tmpData.put("categoryId", categoryDepth1Data.get("CATEGORY_ID"));
+			tmpData.put("name", categoryDepth1Data.get("name"));
+			tmpData.put("categoryId", categoryDepth1Data.get("categoryId"));
 
 			// data 추가
 			returnDataList.add(tmpData);

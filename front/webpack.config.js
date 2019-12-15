@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.(bmp|gif|jpe?g|png)$/,
         loader: "file-loader",
-        options: { name: "images/[name].[hash:6].[ext]" }
+        options: { name: "images/[name].[hash:6].[ext]", esModule: false }
       },
       {
         test: /\.(eot|ttf|otf|woff2?)$/,
@@ -52,13 +52,13 @@ module.exports = {
     host: "0.0.0.0",
     port: 8080,
     disableHostCheck: true,
-    historyApiFallback: true
-    // proxy: {
-    //   "/api": {
-    //     target: "", /////////////////////////
-    //     changeOrigin: true,
-    //     secure: false
-    //   }
-    // }
+    historyApiFallback: true,
+    proxy: {
+      "/api": {
+        target: "http://monster-marin.com/",
+        changeOrigin: true,
+        secure: false
+      }
+    }
   }
 }

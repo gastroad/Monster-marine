@@ -1,34 +1,59 @@
 import React from "react"
-
-const ProductItem = () => {
+interface PropTypes {}
+const ProductItem = (props: PropTypes) => {
   return (
-    <div className="prodcut-item">
-      <img src={require("../../../assets/img/test2.jpg").default} />
+    <div style={{ width: "166px" }}>
       <div
         style={{
-          marginTop: "5px"
+          textAlign: "center",
+          marginBottom: "10px"
         }}
       >
-        <p
-          style={{
-            fontSize: "8px",
-            maxWidth: "184px",
-            textAlign: "center",
-            padding: "0px 8px"
-          }}
-        >
-          오디세이 에어데크240 고무보트 + 혼다/도하츠 선외기 / 보트세트상품 /
-          낚시용 레져용 보트
-        </p>
-        <p
-          style={{
-            fontWeight: "bold",
-            textAlign: "center",
-            margin: "10px 0px"
-          }}
-        >
-          100000000000원
-        </p>
+        <img
+          style={{ width: "140px", cursor: "pointer" }}
+          src={require("../../../assets/img/test3.jpg")}
+        />
+      </div>
+      <div style={{ textAlign: "center", width: "166px" }}>
+        <div>
+          <a
+            style={{
+              display: "inline-block",
+              color: "#909090",
+              fontSize: "12px",
+              padding: "0 0 3px 0"
+            }}
+          >
+            스네이크헤드 370KIB + 선외기 보트풀세트 / 에어매트 고무보트
+            선외기세트
+          </a>
+        </div>
+        <a style={{ display: "inline-block", color: "#909090" }}>
+          <span style={{ fontSize: "11px" }}>2,910,000원</span>
+        </a>
+        <div style={{ paddingBottom: "3px" }}>
+          <a
+            style={{
+              display: "inline-block",
+              color: "#222222",
+              fontWeight: "bold",
+              padding: "0px 0px 3px 0px"
+            }}
+          >
+            <b
+              style={{
+                fontSize: "11px"
+              }}
+            >
+              2,540,000원
+            </b>
+          </a>
+        </div>
+        <div>
+          <img src={require("../../../assets/img/product1.gif")} />
+          <img src={require("../../../assets/img/product2.gif")} />
+          <img src={require("../../../assets/img/product3.gif")} />
+        </div>
       </div>
     </div>
   )

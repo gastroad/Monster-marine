@@ -1,6 +1,4 @@
 import React from "react"
-
-import Main from "./pages/Main"
 import {
   BrowserRouter as Router,
   Redirect,
@@ -8,8 +6,12 @@ import {
   Switch
 } from "react-router-dom"
 
+import Main from "./pages/Main"
+import ProductList from "./pages/ProductList"
+
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import SubMenu from "./components/SubMenu"
 
 import "./index.scss"
 
@@ -17,26 +19,26 @@ const App = () => {
   return (
     <Router>
       <>
-        <div
-          style={{
-            width: "1200px",
-            margin: "0 auto"
-          }}
-        >
+        <div id="root-modal" />
+        <div>
           <Header />
-          <>
-            <div id="root-modal" />
-            <Switch>
-              <Route path="/main" component={Main} />
-              <Route
-                path="/test"
-                component={() => {
-                  return <div>test</div>
-                }}
-              />
-              <Redirect to="/main" />
-            </Switch>
-          </>
+          <div
+            style={{
+              width: "1200px",
+              margin: "0px auto",
+              display: "flex",
+              justifyContent: " space-between"
+            }}
+          >
+            <SubMenu />
+            <>
+              <Switch>
+                <Route path="/main" component={Main} />
+                <Route path="/product/:categoryID" component={ProductList} />
+                <Redirect to="/main" />
+              </Switch>
+            </>
+          </div>
         </div>
         <Footer />
       </>

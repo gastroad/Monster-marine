@@ -23,7 +23,6 @@ export const Pagination: React.FunctionComponent<PropsType> = props => {
         ++plus
       }
     }
-    // 숫자를 랜더링 해주는 로직 index는 0부터 4까지 고정이고 plus 가 숫자를 더해줘서 현제페이지에 맞게 숫자를 랜더링해준다
     return array.map((undef, index) => (
       <a
         key={index}
@@ -59,7 +58,7 @@ export const Pagination: React.FunctionComponent<PropsType> = props => {
         }}
       >
         <img
-          src={require("../../../assets/img/paging2.png").default}
+          src={require("../../../assets/img/paging2.png")}
           alt="처음"
         />
       </a>
@@ -70,7 +69,7 @@ export const Pagination: React.FunctionComponent<PropsType> = props => {
         }}
       >
         <img
-          src={require("../../../assets/img/paging3.png").default}
+          src={require("../../../assets/img/paging3.png")}
           alt="처음"
         />
       </a>

@@ -1,0 +1,30 @@
+.sub-menu {
+  width: 190px;
+  margin-right: 10px;
+  display: inline-block;
+  .sub-menu-category {
+    height: 42px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 13px;
+    line-height: 42px;
+  }
+  .sub-menu-category-menu {
+    height: 38px;
+    color: #000000;
+    font-size: 12px;
+    line-height: 38px;
+    border-top: 1px solid #f1f1f1;
+    a {
+      cursor: pointer;
+      color: #000000;
+      font-size: 12px;
+      height: 35px;
+      line-height: 35px;
+      padding: 0 0 0 38px;
+      text-decoration: none;
+      word-spacing: -1px;
+    }
+  }
+}
